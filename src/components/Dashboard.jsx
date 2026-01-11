@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [deleteModal, setDeleteModal] = useState({ isOpen: false, id: null });
-  
+
   // Search & Filter states
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState('');
@@ -107,13 +107,13 @@ const Dashboard = () => {
   return (
     <Layout>
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-lg flex items-start space-x-3">
-          <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="mb-6 p-3 sm:p-4 bg-red-50 border-l-4 border-red-500 rounded-lg flex items-start space-x-2 sm:space-x-3">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <div className="flex-1">
-            <h3 className="text-red-800 font-medium">Error</h3>
-            <p className="text-red-700 text-sm mt-1">{error}</p>
+            <h3 className="text-red-800 font-medium text-sm sm:text-base">Error</h3>
+            <p className="text-red-700 text-xs sm:text-sm mt-1">{error}</p>
           </div>
           <button
             onClick={() => setError(null)}
@@ -137,7 +137,7 @@ const Dashboard = () => {
 
       {/* Results Count */}
       {(searchTerm || dateFilter) && (
-        <div className="mb-4 text-sm text-gray-600">
+        <div className="mb-4 text-xs sm:text-sm text-gray-600">
           Showing {filteredBookings.length} of {bookings.length} bookings
           {searchTerm && <span> matching "{searchTerm}"</span>}
         </div>
@@ -145,7 +145,7 @@ const Dashboard = () => {
 
       {loading ? (
         <div className="flex justify-center items-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+          <div className="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-primary-600"></div>
         </div>
       ) : (
         <BookingList

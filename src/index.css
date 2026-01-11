@@ -16,6 +16,8 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    /* Mobile-first font size - scales up on larger screens */
+    font-size: 16px;
   }
   
   body {
@@ -23,34 +25,56 @@
     background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
     background-size: 20px 20px;
   }
+
+  /* Responsive typography scaling */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl font-semibold;
+  }
 }
 
 @layer components {
+  /* Mobile-first button with touch-friendly sizing (min 44px height) */
   .btn-primary {
-    @apply px-4 py-2 bg-primary-600 text-white rounded-xl shadow-sm hover:bg-primary-700 
+    @apply px-6 py-3 bg-primary-600 text-white rounded-xl shadow-sm hover:bg-primary-700 
     focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 
     transition-all duration-200 font-medium active:scale-95 transform;
+    min-height: 44px; /* iOS/Android touch target recommendation */
+    min-width: 44px;
   }
   
   .btn-secondary {
-    @apply px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-xl shadow-sm 
+    @apply px-6 py-3 bg-white text-gray-700 border border-gray-300 rounded-xl shadow-sm 
     hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 
     transition-all duration-200 font-medium active:scale-95 transform;
+    min-height: 44px;
+    min-width: 44px;
   }
 
   .btn-danger {
-    @apply px-4 py-2 bg-white text-red-600 border border-red-200 rounded-xl shadow-sm 
+    @apply px-6 py-3 bg-white text-red-600 border border-red-200 rounded-xl shadow-sm 
     hover:bg-red-50 hover:border-red-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 
     transition-all duration-200 font-medium active:scale-95 transform;
+    min-height: 44px;
+    min-width: 44px;
     /* Red button variant for primary danger actions */
     &.btn-danger-primary {
        @apply bg-red-600 text-white border-transparent hover:bg-red-700 hover:text-white;
     }
   }
 
+  /* Touch-friendly input fields with adequate height */
   .input-field {
     @apply block w-full rounded-xl border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 
-    transition-colors duration-200 sm:text-sm py-2.5 px-3;
+    transition-colors duration-200 text-base py-3 px-4;
+    min-height: 44px; /* Ensure touch-friendly on mobile */
   }
 
   .label {
@@ -63,6 +87,13 @@
   
   .container-custom {
     @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Mobile-optimized utility classes */
+  .mobile-menu-button {
+    @apply p-2 rounded-lg hover:bg-gray-100 transition-colors;
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 

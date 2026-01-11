@@ -1,9 +1,9 @@
 const SearchFilter = ({ onSearch, onFilter, onSort }) => {
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Search & Filter</h3>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="bg-white rounded-xl shadow-md p-4 sm:p-5 md:p-6 mb-6">
+      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Search & Filter</h3>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         {/* Search by Name */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -37,26 +37,26 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center px-3 sm:px-4">
       <div className="max-w-md w-full">
         {/* Logo/Header */}
-        <div className="text-center mb-8">
-          <div className="bg-primary-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="bg-primary-600 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">BookGarnus</h1>
-          <p className="text-gray-600 mt-2">Sign in to manage your bookings</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">BookGarnus</h1>
+          <p className="text-sm sm:text-base text-gray-600 mt-2">Sign in to manage your bookings</p>
         </div>
 
         {/* Login Card */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Welcome Back</h2>
+        <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Welcome Back</h2>
 
           {/* Add this right after the header, before the error message */}
-          <div className="mb-4 p-3 bg-blue-50 border-l-4 border-blue-500 rounded">
-            <p className="text-blue-700 text-sm">
+          <div className="mb-4 p-2.5 sm:p-3 bg-blue-50 border-l-4 border-blue-500 rounded">
+            <p className="text-blue-700 text-xs sm:text-sm">
               ℹ️ First login may take 30-60 seconds as the server wakes up. Subsequent logins are instant.
             </p>
           </div>
@@ -130,7 +130,7 @@ const Login = () => {
         </div>
 
         {/* Footer */}
-        <p className="text-center text-gray-500 text-sm mt-8">
+        <p className="text-center text-gray-500 text-xs sm:text-sm mt-6 sm:mt-8">
           © 2026 BookGarnus. Built with MERN Stack
         </p>
       </div>
